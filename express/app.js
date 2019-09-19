@@ -1,21 +1,24 @@
-// var express = require("express");
-// var app = express();
-// var logger = require("morgan");
-
-// app.use(logger("tiny"));
+var express = require("express");
+var app = express();
+// app.use('/img', [
+//  express.static(__dirname + '/public/img')
+// ]);
 // app.use(function(req, res) {
-//  res.end("Hello, world!");
+//  res.end("Acesse o arquivo /img/codebench.jpg");
 // });
-// app.listen(3000);
 
-const express = require("express");
-const app = express();
-var logger = require("morgan");
+app.get("/", function(req, res) {
+    res.end("Bem-vindo ao meu site!");
+   });
+   app.get("/sobre", function(req, res) {
+    res.end("Bem-vindo à página sobre!");
+   });
+   app.use(function(req, res) {
+    res.statusCode = 404;
+    res.end("404!");
+   });
+   
 
-app.use(logger("short"));
-app.use(function(req, res) {
- res.end("Hello, world!");
-});
 app.listen(3000, function() {
- console.log("Express app iniciada na porta 3000.");
+    console.log("Express app iniciada na porta 3000.");
 });
