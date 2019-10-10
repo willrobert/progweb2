@@ -25,7 +25,36 @@ const create = async function (req, res) {
     }
 };
 const read = async function (req, res) {};
-const update = async function (req, res) {};
-const remove = async function (req, res) {};
+const update = async function (req, res) {
+    var curso = await Curso.findByPk(req.params.id);
+
+    if (req.route.methods.get) {
+        res.render("curso/update", {
+            curso:curso
+        });
+    } else {
+        try {
+            //await Curso.destroy({where: {id: req}})
+    
+        }
+        
+    }
+};
+const remove = async function (req, res) {
+    const curso = await Curso.findByPk(req.params.id);
+
+    if (req.route.methods.get) {
+        res.render("curso/remove", {
+            curso:curso
+        });
+    } else {
+        // try {
+        //     //await Curso.destroy({where: {id: req}})
+    
+        // } catch {}
+        
+    }
+
+};
 
 module.exports = { index, read, create, update, remove }
