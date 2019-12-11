@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const curso = sequelize.define('curso', {
-    sigla: {
-      tyep: DataTypes.STRING,
-      allowNull: false
-    },
+    // sigla: {
+    //   tyep: DataTypes.STRING,
+    //   allowNull: false
+    // },
     nome: { 
       type: DataTypes.STRING,
       allowNull: false,
