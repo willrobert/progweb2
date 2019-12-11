@@ -9,12 +9,16 @@ app.use(router);
 
 // handlebasr
 const handlebars = require('express-handlebars');
-app.engine('handlebars', handlebars());
+app.engine('handlebars', handlebars({
+    //helpers: require(__dirname + '/app/views/helpers/helpers.js'),
+    layoutsDir: __dirname + '/app/views/layouts',
+    defaultLayout: 'main'
+}));
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/app/views');
 
 // Sass
-const sass = require('node-sass-middleware')
+const sass = require('node-sass-middleware');
 app.use(sass({
     src: __dirname + '/public/scss',
     dest: __dirname + '/public/css',
