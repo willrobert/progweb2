@@ -5,14 +5,15 @@ module.exports = (sequelize, DataTypes) => {
     //   tyep: DataTypes.STRING,
     //   allowNull: false
     // },
-    nome: { 
+    nome: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: {
-          args:[40,50],
+          args: [4, 50],
           msg: "O nome do curso precisa ter entre 4 e 50 caracteres."
         }
+
       }
     },
     descricao: DataTypes.TEXT,
@@ -20,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     underscored: true,
   });
-  curso.associate = function(models) {
+  curso.associate = function (models) {
     // associations can be defined here
   };
   return curso;
