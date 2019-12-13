@@ -5,5 +5,12 @@ const index = async (req, res) => {
     res.render('area/index', {
         areas: areas,
     });
+
+    // const proprietario = await Area.findByPk(1, {
+    //     include: [{
+    //     model: curso,
+    //     as: 'cursos'
+    //     }],
+    //    });
 };
 module.exports = { index }

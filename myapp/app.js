@@ -7,13 +7,10 @@ app.use(express.urlencoded({extended: false}));
 app.use(router);
 app.use(logger("common"));
 
-// app.use(express.urlencoded({extended: false}));
-// app.use(logger('common'))
-
 // handlebasr
 const handlebars = require('express-handlebars');
 app.engine('handlebars', handlebars({
-    //helpers: require(__dirname + '/app/views/helpers/helpers.js'),
+    helpers: require(__dirname + '/app/views/helpers/helpers.js'),
     layoutsDir: __dirname + '/app/views/layouts',
     defaultLayout: 'main'
 }));

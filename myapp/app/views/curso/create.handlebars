@@ -14,40 +14,41 @@
         <form action="" method="post">
             <div class="form-group">
                 <label for="sigla">Sigla</label>
-                <input class="form-control" id="sigla" aria-describedby="Help">
+                <input type="text" class="form-control" name="sigla" id="sigla" aria-describedby="Help">
                 <small id="Help" class="form-text text-muted">Na duvida da sigla busque no site da UFAM.</small>
             </div>
-            <div class="form-group">
-                <label for="sigla">Nome</label>
-                <input type="text" class="form-control" name="nome" id="nome" >                
+            <div class="form-group has-danger">
+                <label class="form-control-label" for="nome">Nome</label>
+                <input type="text" class="form-control is-invalid" name="nome" id="nome" value="{{curso.nome}}">
+                <div class="invalid-feedback">{{showError errors 'nome'}}</div>
             </div>
             <div class="form-group">
-                    <label for="descricao">Descrição do curso</label>
-                    <textarea class="form-control" name="descricao" id="descricao" rows="3"></textarea>
+                <label for="descricao">Descrição do curso</label>
+                <textarea class="form-control" name="descricao" id="descricao" rows="3"></textarea>
             </div>
 
             <fieldset class="form-group">
-                    <legend>Area de Conhecimento </legend>
-                    <div class="form-check">
-                      <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="id_area" value="1" >
+                <legend>Area de Conhecimento </legend>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="id_area" value="1">
                         Exatas (Matematica, Computação, Estatística)
-                      </label>
-                    </div>
-                    <div class="form-check">
+                    </label>
+                </div>
+                <div class="form-check">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="id_area"  value="2">
+                        <input type="radio" class="form-check-input" name="id_area" value="2">
                         Huamas (Historia, Letras, Psicologia)
-                      </label>
-                    </div>
-                    <div class="form-check disabled">
+                    </label>
+                </div>
+                <div class="form-check disabled">
                     <label class="form-check-label">
-                        <input type="radio" class="form-check-input" name="id_area"  value="3" >
+                        <input type="radio" class="form-check-input" name="id_area" value="3">
                         Bilogicas (Medicina, Biologia, Farmacia)
-                      </label>
-                    </div>
-                  </fieldset>
-                  <button type="submit" class="btn btn-outline-primary">Adicionar Curso</button>
+                    </label>
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-outline-primary">Adicionar Curso</button>
         </form>
     </div>
 </div>

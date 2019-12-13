@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       id_area: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       created_at: {
         allowNull: false,

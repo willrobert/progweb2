@@ -4,9 +4,10 @@ module.exports = (sequelize, DataTypes) => {
     nome: DataTypes.STRING
   }, {
     underscored: true,
+    tablename: 'areas'
   });
   area.associate = function(models) {
-    // associations can be defined here
+    //area.hasMany(models.curso);
   };
   return area;
 };

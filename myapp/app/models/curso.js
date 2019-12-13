@@ -1,10 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const curso = sequelize.define('curso', {
-    // sigla: {
-    //   tyep: DataTypes.STRING,
-    //   allowNull: false
-    // },
+    sigla: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     nome: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     underscored: true,
   });
   curso.associate = function (models) {
-    // associations can be defined here
+    //curso.belongsTo(models.area);
+    // curso.belongsTo(models.area, {
+    //   foreignKey: 'cursos_id_area_fk'
+    // });
   };
   return curso;
 };

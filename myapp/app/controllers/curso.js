@@ -18,14 +18,17 @@ const create = async function (req, res) {
                 sigla: req.body.sigla,
                 nome: req.body.nome,
                 descricao: req.body.descricao,
-                id_area: req.body.area,
+                id_area: req.body.id_area,
             });
+            res.redirect('/curso');            
         } catch (e) {
-            console.log(e);
+            res.render('curso/create', {
+                curso: req.body,
+                errors: e.errors
+            });
         }
-        res.redirect('/curso');
+        
     }
-    //res.redirect('/curso');
 };
 
 const read = async function (req, res) {
